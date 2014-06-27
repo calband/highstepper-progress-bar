@@ -14,5 +14,17 @@ In your `<head>`:
 			$(".container").highstepperProgressBar({
 				// options
 			});
+		});
 	</script>
+```
+
+### Supported options
+```javascript
+$(".container").highstepperProgressBar({
+	numYardlines: 19         // number of yardlines on the field
+	percentCompleted: 50     // percent (out of 100) that the progress bar is completed
+	markers: []              // array of strings to mark the yardlines with
+	markerEvery: 2           // markers should appear only every <value> yardlines
+	width: 960               // total bar width, in pixels
+});
 ```
