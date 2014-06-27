@@ -1,7 +1,7 @@
 # Highstepper progress bar
 A jquery plugin for Cal Band's [50,000 dollar donation challenge](http://calband.berkeley.edu/50k-challenge).
 
-### [Demo](http://calband.github.io/highstepper-progress-bar)
+### Demos: [progress bar only](http://calband.github.io/highstepper-progress-bar) and [integration with a page](http://calband.berkeley.edu/50k-challenge)
 
 ### Usage
 In your `<head>`:
