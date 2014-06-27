@@ -27,6 +27,13 @@ module.exports = (grunt) ->
 					filename: "highstepper-progress-bar.js"
 				}
 		watch:
-			files: ["static/css/**/*.less"],
-			tasks: ["less"]
+			less:
+				files: ["less/**/*.less"],
+				tasks: ["less"]
+			coffee:
+				files: ["lib/**/*.coffee"],
+				tasks: ["coffee"]
+			webpack:
+				files: ["build/lib/**/*.js"],
+				tasks: ["webpack:build"]
 	}

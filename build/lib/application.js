@@ -1,6 +1,15 @@
 (function() {
-  require("./bar");
+  var HighstepperProgressBar;
 
-  console.log("init");
+  HighstepperProgressBar = require("./bar");
+
+  $.fn.extend({
+    highstepperProgressBar: function(options) {
+      var bar;
+      bar = new HighstepperProgressBar(options);
+      $(this).html(bar.render());
+      return console.log("heyy");
+    }
+  });
 
 }).call(this);

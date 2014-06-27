@@ -45,9 +45,18 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	(function() {
-	  __webpack_require__(1);
+	  var HighstepperProgressBar;
 
-	  console.log("init");
+	  HighstepperProgressBar = __webpack_require__(1);
+
+	  $.fn.extend({
+	    highstepperProgressBar: function(options) {
+	      var bar;
+	      bar = new HighstepperProgressBar(options);
+	      $(this).html(bar.render());
+	      return console.log("heyy");
+	    }
+	  });
 
 	}).call(this);
 
