@@ -1,14 +1,5 @@
-@main-width: 960px;
-.container {
-	dislay: block;
-	width: @main-width;
-	margin: 0 auto;
-	margin-top: 50px;
-}
-
 @field-height: 40px;
 @field-border-width: 1px;
-@field-width: @main-width - @field-border-width;
 .cbhpg-bar {
 	display: block;
 	height: @field-height;
@@ -56,7 +47,6 @@
 	.cbhpg-yardline-space {
 		display: inline-block;
 		height: @field-height - 2 * @endzone-border-width;
-		// width: (@field-width - 2 * (@endzone-width + 2 * @endzone-border-width) - @num-yardline-spaces * @yardline-width) / @num-yardline-spaces;
 		background-color: @field-color;
 		border-right: @yardline-width solid white;
 		border-top: @endzone-border-width solid white;
