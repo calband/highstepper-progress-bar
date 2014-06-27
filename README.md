@@ -19,6 +19,7 @@ In your `<head>`:
 ```
 
 ### Supported options
+Defaults are shown here as the values.
 ```javascript
 $(".container").highstepperProgressBar({
 	numYardlines: 19         // number of yardlines on the field
