@@ -7,7 +7,7 @@
 .cbhpg-bar {
   display: block;
   height: 40px;
-  border: 1px solid #bbb;
+  border: 1px solid #bbbbbb;
   position: relative;
 }
 .cbhpg-bar .cbhpg-shade {
@@ -25,7 +25,6 @@
   height: 100%;
   width: auto;
   bottom: 13;
-  left: 703.4px;
   z-index: 9999;
 }
 .cbhpg-bar .cbhpg-highstepper img {
@@ -42,7 +41,6 @@
 .cbhpg-bar .cbhpg-yardline-space {
   display: inline-block;
   height: 34px;
-  width: 44.25px;
   background-color: #5d7749;
   border-right: 1px solid #ffffff;
   border-top: 3px solid #ffffff;
@@ -51,7 +49,7 @@
   overflow: visible;
 }
 .cbhpg-bar .cbhpg-yardline-space.cbhpg-yardline-space-last {
-  border-rght: none;
+  border-right: none;
 }
 .cbhpg-bar .cbhpg-yardline-space .cbhpg-marker {
   display: block;

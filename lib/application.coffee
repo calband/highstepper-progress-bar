@@ -5,4 +5,3 @@ $.fn.extend
 		options = options || {}
 		bar = new HighstepperProgressBar options
 		$(this).html bar.render()
-		console.log "heyy"

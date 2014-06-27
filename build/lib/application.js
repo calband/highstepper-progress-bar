@@ -8,8 +8,7 @@
       var bar;
       options = options || {};
       bar = new HighstepperProgressBar(options);
-      $(this).html(bar.render());
-      return console.log("heyy");
+      return $(this).html(bar.render());
     }
   });
 

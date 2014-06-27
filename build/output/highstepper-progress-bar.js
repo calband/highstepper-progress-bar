@@ -54,8 +54,7 @@
 	      var bar;
 	      options = options || {};
 	      bar = new HighstepperProgressBar(options);
-	      $(this).html(bar.render());
-	      return console.log("heyy");
+	      return $(this).html(bar.render());
 	    }
 	  });
 
@@ -80,7 +79,8 @@
 	        numYardlines: 19,
 	        percentCompleted: 50,
 	        markers: [],
-	        markerEvery: 2
+	        markerEvery: 2,
+	        width: 960
 	      };
 	      this.opts = {};
 	      _results = [];
@@ -92,8 +92,7 @@
 	    };
 
 	    HighstepperProgressBar.prototype.render = function() {
-	      var content, highstepperLeft, highstepperOffset, html, i, maybeMarker, oneEndzoneWidth, percentCompleted, progressBarWidthMinusEndzones, shadeWidth, _i, _ref;
-	      console.log(this.opts.markers);
+	      var content, fieldWidth, highstepperLeft, highstepperOffset, html, i, maybeMarker, numYardlineSpaces, oneEndzoneWidth, percentCompleted, progressBarWidthMinusEndzones, shadeWidth, yardlineSpaceWidth, _i, _ref;
 	      html = "";
 	      html += "<div class='cbhpg-bar'>";
 	      html += "<div class='cbhpg-shade'></div>";
@@ -107,8 +106,6 @@
 	        if (((i + 1) % this.opts.markerEvery === 0) && i !== this.opts.numYardlines) {
 	          html += "<div class='cbhpg-marker'>";
 	          maybeMarker = this.opts.markers[(i + 1) / this.opts.markerEvery - 1];
-	          console.log((i + 1) / this.opts.markerEvery - 1);
-	          console.log(maybeMarker);
 	          if (maybeMarker) {
 	            html += maybeMarker;
 	          }
@@ -123,13 +120,18 @@
 	      oneEndzoneWidth = 20 + 6;
 	      highstepperOffset = 7;
 	      percentCompleted = this.opts.percentCompleted / 100;
-	      highstepperLeft = percentCompleted * (960 - 2 * oneEndzoneWidth) + oneEndzoneWidth - highstepperOffset;
+	      highstepperLeft = percentCompleted * (this.opts.width - 2 * oneEndzoneWidth) + oneEndzoneWidth - highstepperOffset;
 	      content.find(".cbhpg-highstepper").css("left", highstepperLeft);
-	      progressBarWidthMinusEndzones = 960 - 2 * oneEndzoneWidth;
+	      progressBarWidthMinusEndzones = this.opts.width - 2 * oneEndzoneWidth;
 	      shadeWidth = oneEndzoneWidth + progressBarWidthMinusEndzones * (1 - (this.opts.percentCompleted / 100));
 	      content.find(".cbhpg-shade").css("width", shadeWidth);
-	      console.log(html);
-	      console.log(content.html());
+	      fieldWidth = this.opts.width - 2;
+	      numYardlineSpaces = this.opts.numYardlines + 1;
+	      yardlineSpaceWidth = (fieldWidth - 2 * oneEndzoneWidth - this.opts.numYardlines * 1) / numYardlineSpaces;
+	      content.find(".cbhpg-yardline-space").css("width", yardlineSpaceWidth);
+	      content.css("width", fieldWidth);
+	      console.log(fieldWidth);
+	      console.log($('<div>').append(content.clone()).html());
 	      return $('<div>').append(content.clone()).html();
 	    };
 

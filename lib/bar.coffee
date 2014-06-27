@@ -8,13 +8,13 @@ class HighstepperProgressBar
 			percentCompleted: 50
 			markers: []
 			markerEvery: 2
+			width: 960
 		}
 		@opts = {}
 		for key, value of defaultOpts
 			@opts[key] = opts[key] or value
 
 	render: ->
-		console.log @opts.markers
 		html = ""
 		html += "<div class='cbhpg-bar'>"
 		html += "<div class='cbhpg-shade'></div>"
@@ -27,8 +27,6 @@ class HighstepperProgressBar
 			if ((i+1) % @opts.markerEvery is 0) and i isnt @opts.numYardlines
 				html += "<div class='cbhpg-marker'>"
 				maybeMarker = @opts.markers[(i+1) / @opts.markerEvery - 1]
-				console.log ((i+1) / @opts.markerEvery - 1)
-				console.log maybeMarker
 				if maybeMarker
 					html += maybeMarker
 				html += "</div>"
@@ -42,18 +40,21 @@ class HighstepperProgressBar
 
 		highstepperOffset = 7 # px
 		percentCompleted = @opts.percentCompleted / 100
-		highstepperLeft = percentCompleted * (960 - 2 * oneEndzoneWidth) + oneEndzoneWidth - highstepperOffset
+		highstepperLeft = percentCompleted * (@opts.width - 2 * oneEndzoneWidth) + oneEndzoneWidth - highstepperOffset
 		content.find(".cbhpg-highstepper").css("left", highstepperLeft);
 
-		# $shade_width = $endzone_width + $progress_bar_width_minus_endzones * $shade_percent_int;
-		# $progress_bar_width_minus_endzones = ($main_width - 2 * $endzone_width)
-		progressBarWidthMinusEndzones = 960 - 2 * oneEndzoneWidth
+		progressBarWidthMinusEndzones = @opts.width - 2 * oneEndzoneWidth
 		shadeWidth = oneEndzoneWidth + progressBarWidthMinusEndzones * (1 - (@opts.percentCompleted / 100))
-		content.find(".cbhpg-shade").css("width", shadeWidth);
+		content.find(".cbhpg-shade").css("width", shadeWidth)
 
-		console.log html
-		console.log content.html()
+		# width: (@field-width - 2 * (@endzone-width + 2 * @endzone-border-width) - @num-yardline-spaces * @yardline-width) / @num-yardline-spaces;
+		fieldWidth = @opts.width - 2 # pixels, for border
+		numYardlineSpaces = @opts.numYardlines + 1;
+		yardlineSpaceWidth = (fieldWidth - 2 * oneEndzoneWidth - @opts.numYardlines * 1) / numYardlineSpaces
+		content.find(".cbhpg-yardline-space").css("width", yardlineSpaceWidth)
+
+		content.css("width", fieldWidth)
+
 		return $('<div>').append(content.clone()).html();
-		# return html
 
 module.exports = HighstepperProgressBar
