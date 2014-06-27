@@ -4,13 +4,13 @@
   margin: 0 auto;
   margin-top: 50px;
 }
-.bar {
+.cbhpg-bar {
   display: block;
   height: 40px;
   border: 1px solid #bbb;
   position: relative;
 }
-.bar .shade {
+.cbhpg-bar .cbhpg-shade {
   display: block;
   position: absolute;
   height: 100%;
@@ -19,7 +19,7 @@
   background-color: rgba(255, 255, 255, 0.85);
   z-index: 9999;
 }
-.bar .highstepper {
+.cbhpg-bar .cbhpg-highstepper {
   display: block;
   position: absolute;
   height: 100%;
@@ -28,18 +28,18 @@
   left: 703.4px;
   z-index: 9999;
 }
-.bar .highstepper img {
+.cbhpg-bar .cbhpg-highstepper img {
   display: block;
   width: 30px;
 }
-.bar .endzone {
+.cbhpg-bar .cbhpg-endzone {
   display: inline-block;
   height: 34px;
   width: 20px;
   border: 3px solid #ffffff;
   background-color: #254b89;
 }
-.bar .yardline-space {
+.cbhpg-bar .cbhpg-yardline-space {
   display: inline-block;
   height: 34px;
   width: 44.25px;
@@ -50,10 +50,10 @@
   position: relative;
   overflow: visible;
 }
-.bar .yardline-space.last {
+.cbhpg-bar .cbhpg-yardline-space.cbhpg-yardline-space-last {
   border-rght: none;
 }
-.bar .yardline-space .marker {
+.cbhpg-bar .cbhpg-yardline-space .cbhpg-marker {
   display: block;
   position: absolute;
   bottom: 0;

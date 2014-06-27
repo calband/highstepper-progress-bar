@@ -32,8 +32,5 @@ module.exports = (grunt) ->
 				tasks: ["less"]
 			coffee:
 				files: ["lib/**/*.coffee"],
-				tasks: ["coffee"]
-			webpack:
-				files: ["build/lib/**/*.js"],
-				tasks: ["webpack:build"]
+				tasks: ["coffee", "webpack:build"]
 	}

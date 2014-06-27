@@ -1,25 +1,38 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="build/css/highstepper-progress-bar.css">
 	<style type="text/css">
 		.shade {
 			width: 26%;
 		}
 	</style>
-	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="build/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="build/output/highstepper-progress-bar.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$(".container").highstepperProgressBar();
+			$(".container").highstepperProgressBar({
+				markers: [
+					" 5 000",
+					"10 000",
+					"15 000",
+					"20 000",
+					"25 000",
+					"30 000",
+					"35 000",
+					"40 000",
+					"45 000"
+				],
+				markerEvery: 6
+			});
 		});
 	</script>
 </head>
 <body>
 	<div class="container">
-		<div class="bar">
+<!-- 		<div class="bar">
 			<div class="shade"></div>
 			<div class="endzone"></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">30 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">10 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">15 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">20 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">25 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">30 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">35 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">40 000</div></div><div class="yardline-space"></div><div class="yardline-space"><div class="marker">45 000</div></div><div class="yardline-space"></div><div class="yardline-space last"></div><div class="endzone"></div><div class="highstepper"><img src="calband-highstepper.png"></div></div>
-	</div>
+	</div> -->
 </body>
 </html>

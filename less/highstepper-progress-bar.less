@@ -9,13 +9,13 @@
 @field-height: 40px;
 @field-border-width: 1px;
 @field-width: @main-width - @field-border-width;
-.bar {
+.cbhpg-bar {
 	display: block;
 	height: @field-height;
 	border: 1px solid #bbb;
 	position: relative;
 
-	.shade {
+	.cbhpg-shade {
 		display: block;
 		position: absolute;
 		height: 100%;
@@ -27,7 +27,7 @@
 
 	@percent-finished: 0.74;
 	@highstepper-offset: 7px;
-	.highstepper {
+	.cbhpg-highstepper {
 		display: block;
 		position: absolute;
 		height: 100%;
@@ -45,7 +45,7 @@
 	@endzone-color: #254B89;
 	@endzone-border-width: 3px;
 	@endzone-width: 20px;
-	.endzone {
+	.cbhpg-endzone {
 		display: inline-block;
 		height: @field-height - 2 * @endzone-border-width;
 		width: @endzone-width;
@@ -57,7 +57,7 @@
 	@field-border-width: @endzone-border-width;
 	@num-yardline-spaces: 20;
 	@yardline-width: 1px;
-	.yardline-space {
+	.cbhpg-yardline-space {
 		display: inline-block;
 		height: @field-height - 2 * @field-border-width;
 		width: (@field-width - 2 * (@endzone-width + 2 * @endzone-border-width) - @num-yardline-spaces * @yardline-width) / @num-yardline-spaces;
@@ -69,11 +69,11 @@
 		position: relative;
 		overflow: visible;
 
-		&.last {
+		&.cbhpg-yardline-space-last {
 			border-rght: none;
 		}
 
-		.marker {
+		.cbhpg-marker {
 			display: block;
 			position: absolute;
 			bottom: 0;
