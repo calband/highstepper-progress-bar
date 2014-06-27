@@ -1,0 +1,66 @@
+.container {
+  dislay: block;
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.bar {
+  display: block;
+  height: 40px;
+  border: 1px solid #bbb;
+  position: relative;
+}
+.bar .shade {
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 9999;
+}
+.bar .highstepper {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: auto;
+  bottom: 13;
+  left: 703.4px;
+  z-index: 9999;
+}
+.bar .highstepper img {
+  display: block;
+  width: 30px;
+}
+.bar .endzone {
+  display: inline-block;
+  height: 34px;
+  width: 20px;
+  border: 3px solid #ffffff;
+  background-color: #254b89;
+}
+.bar .yardline-space {
+  display: inline-block;
+  height: 34px;
+  width: 44.25px;
+  background-color: #5d7749;
+  border-right: 1px solid #ffffff;
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  position: relative;
+  overflow: visible;
+}
+.bar .yardline-space.last {
+  border-rght: none;
+}
+.bar .yardline-space .marker {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -17;
+  font-family: "Garamond", times;
+  font-size: 10px;
+  color: white;
+  overflow: visible;
+  z-index: 999;
+}

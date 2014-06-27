@@ -1,0 +1,88 @@
+@main-width: 960px;
+.container {
+	dislay: block;
+	width: @main-width;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+@field-height: 40px;
+@field-border-width: 1px;
+@field-width: @main-width - @field-border-width;
+.bar {
+	display: block;
+	height: @field-height;
+	border: 1px solid #bbb;
+	position: relative;
+
+	.shade {
+		display: block;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: rgba(255, 255, 255, .85);
+		z-index: 9999;
+	}
+
+	@percent-finished: 0.74;
+	@highstepper-offset: 7px;
+	.highstepper {
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: auto;
+		bottom: 13;
+		left: @percent-finished * @main-width - @highstepper-offset;
+		z-index: 9999;
+
+		img {
+			display: block;
+			width: 30px;
+		}
+	}
+
+	@endzone-color: #254B89;
+	@endzone-border-width: 3px;
+	@endzone-width: 20px;
+	.endzone {
+		display: inline-block;
+		height: @field-height - 2 * @endzone-border-width;
+		width: @endzone-width;
+		border: @endzone-border-width solid white;
+		background-color: @endzone-color;
+	}
+
+	@field-color: #5D7749;
+	@field-border-width: @endzone-border-width;
+	@num-yardline-spaces: 20;
+	@yardline-width: 1px;
+	.yardline-space {
+		display: inline-block;
+		height: @field-height - 2 * @field-border-width;
+		width: (@field-width - 2 * (@endzone-width + 2 * @endzone-border-width) - @num-yardline-spaces * @yardline-width) / @num-yardline-spaces;
+		background-color: @field-color;
+		border-right: @yardline-width solid white;
+		border-top: @field-border-width solid white;
+		border-bottom: @field-border-width solid white;
+
+		position: relative;
+		overflow: visible;
+
+		&.last {
+			border-rght: none;
+		}
+
+		.marker {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: -17;
+			font-family: "Garamond", times;
+			font-size: 10px;
+			color: white;
+			overflow: visible;
+			z-index: 999;
+		}
+	}
+}
