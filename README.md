@@ -5,7 +5,7 @@ A jquery plugin for Cal Band's [50,000 dollar donation challenge](http://calband
 
 ### Usage
 In your `<head>`:
-```
+```html
 	<link rel="stylesheet" type="text/css" href="build/output/highstepper-progress-bar.css">
 	<script type="text/javascript" src="build/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="build/output/highstepper-progress-bar.js"></script>
